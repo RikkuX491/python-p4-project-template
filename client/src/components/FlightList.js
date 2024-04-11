@@ -7,7 +7,6 @@ function FlightList(){
     const {flights} = useOutletContext()
 
     const flightsComponents = flights.map(flight => {
-        console.log(flight)
         return <Flight key={flight.id} flight={flight}/>
     })
 

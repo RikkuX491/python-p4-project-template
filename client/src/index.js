@@ -4,6 +4,8 @@ import App from "./components/App";
 import ErrorPage from "./components/ErrorPage";
 import FlightList from './components/FlightList';
 import NewFlightForm from "./components/NewFlightForm";
+import NewBookingForm from "./components/NewBookingForm";
+import BookingsList from "./components/BookingsList";
 
 import "./index.css";
 import { createRoot } from "react-dom/client";
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
             {
                 path: "/add_flight",
                 element: <NewFlightForm/>
+            },
+            {
+                path: "/add_booking",
+                element: <NewBookingForm/>
+            },
+            {
+                path: "/bookings_list",
+                element: <BookingsList/>
             }
         ]
     }
