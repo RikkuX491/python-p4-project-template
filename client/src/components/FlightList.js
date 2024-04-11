@@ -1,6 +1,18 @@
+import { useOutletContext } from "react-router-dom";
+
+import Flight from './Flight';
+
 function FlightList(){
+
+    const {flights} = useOutletContext()
+
+    const flightsComponents = flights.map(flight => {
+        console.log(flight)
+        return <Flight key={flight.id} flight={flight}/>
+    })
+
     return (
-        <h1>Here is the Flight List!</h1>
+        <ul>{flightsComponents}</ul>
     )
 }
 

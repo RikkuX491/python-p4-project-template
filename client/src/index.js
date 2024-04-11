@@ -3,6 +3,7 @@ import React from "react";
 import App from "./components/App";
 import ErrorPage from "./components/ErrorPage";
 import FlightList from './components/FlightList';
+import NewFlightForm from "./components/NewFlightForm";
 
 import "./index.css";
 import { createRoot } from "react-dom/client";
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <FlightList/>
+            },
+            {
+                path: "/add_flight",
+                element: <NewFlightForm/>
             }
         ]
     }

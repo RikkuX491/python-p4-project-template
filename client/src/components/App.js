@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <Outlet/>
+      <Outlet context={{flights: flights}}/>
     </div>
   )
 }
