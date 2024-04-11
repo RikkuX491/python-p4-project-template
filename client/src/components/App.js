@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import {Outlet} from 'react-router-dom';
+
+import NavBar from './NavBar'
 
 function App() {
-  return <h1>Flight Project!</h1>;
+
+  const [flights, setFlights] = useState([])
+
+  useEffect(() => {
+    fetch('/flights')
+    .then(response => response.json())
+    .then(flightsData => setFlights(flightsData))
+  }, [])
+
+  return (
+    <div>
+      <NavBar/>
+      <Outlet/>
+    </div>
+  )
 }
 
 export default App;
